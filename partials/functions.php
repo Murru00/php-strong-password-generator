@@ -27,3 +27,12 @@ function generate_password($length)
 
   return $generated_password;
 }
+
+function generate_available_chars()
+{
+  $lc_chars = implode('', range('a', 'z'));
+  $up_chars = strtoupper($lc_chars);
+  $numbers = implode('', range('0', '9'));
+  $specials = "\|!\"%&/()=?'";
+  return $lc_chars . $up_chars . $numbers . $specials;
+}
