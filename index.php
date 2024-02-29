@@ -1,6 +1,6 @@
 <?php
 
-$password_security = (int) $_GET['password-security'];
+$password_security = (int) $_GET['password-security'] ?? 2;
 
 $form_sent = !empty($_GET);
 
@@ -8,7 +8,7 @@ $form_sent = !empty($_GET);
  * 
  * 
  * @param int LUNGHEZZA PASSWORD
- * @return string PASSWORD GENERATA 
+ *@return string PASSWORD GENERATA 
  */
 
 function generate_password($security)
@@ -30,15 +30,18 @@ function generate_password($security)
   
   }
   return $password_generate;
+  var_dump($password_generate);
 }
 
 if ($form_sent) {
-  generate_password($password_security;)
+  generate_password($password_security);
 
- 
+
+  
 }
 
-
+require_once __DIR__ . "/partials/functions.php";
+require_once __DIR__ . "/partials/init.php";
 
 ?>
 
