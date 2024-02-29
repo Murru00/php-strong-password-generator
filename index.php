@@ -25,17 +25,25 @@ $letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "l", "m", "n", "o", "p"
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+<div class="container mt-5">
 
-<h1>GENERA LA TUA PASSWORD SICURA</h1>
-<form class="row g-3 mt-5 mb-5">
-  <div class="col-auto">
-    <label for="inputPassword2" class="visually-hidden">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+<div class="card">
+  <div class="card-body">
+      <form class="row">
+    <div class="col-10">
+      <label for="" class="form-label">
+        Genera la tua password sicura:
+      </label>
+      <input type="number" class="form-control" name="password" id="password">
+    </div>
+    <div class="col-2 d-flex align-items-end">
+      <button class="btn btn-primary w-100">Genera Password</button>
+    </div>
+  </form>
   </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">INVIA</button>
-  </div>
-</form>
+</div>
+
+</div>
     
 </body>
 </html>
