@@ -1,17 +1,21 @@
 <?php
 
-$password = [];
+$password_security = (int) $_GET['password-security'];
 
-$special_char = ["!", "?", "@", "*", "#", "=", "/", "$", "£", "%", "&", "^"];
+$form_sent = !empty($_GET);
 
-$characters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "z", "x", "y", "j", "k", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "!", "?", "@", "*", "#", "=", "A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Z", "X", "Y", "J", "K"];
 
-$numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-$letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "z", "x", "y", "j", "k", "A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Z", "X", "Y", "J", "K"];
+if ($form_sent) {
+  $all_chars = "abcdefghilmnopqrstuvzxwykj1234567890!£$%&/()=?^ABCDEFGHILMNOPQRSTUVZWKYJX";
+  $rand_char_index = rand(0, strlen( $all_chars) -1);
+  $rand_char = $all_chars [$rand_char_index];
+}
+
 
 
 ?>
+
 
 
 
@@ -34,7 +38,7 @@ $letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "l", "m", "n", "o", "p"
       <label for="" class="form-label">
         Genera la tua password sicura:
       </label>
-      <input type="number" class="form-control" name="password" id="password">
+      <input type="number" class="form-control" name="password-security" id="password-security" value="<?= $password_security ?>">
     </div>
     <div class="col-2 d-flex align-items-end">
       <button class="btn btn-primary w-100">Genera Password</button>
