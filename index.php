@@ -1,45 +1,5 @@
 <?php
 
-$password_security = (int) $_GET['password-security'] ?? 2;
-
-$form_sent = !empty($_GET);
-
-/**
- * 
- * 
- * @param int LUNGHEZZA PASSWORD
- *@return string PASSWORD GENERATA 
- */
-
-function generate_password($security)
-{
-  $password_generate = "";
-  for( $i = 0; $i < $security; $i++){
-    $all_chars = "abcdefghilmnopqrstuvzxwykj1234567890!£$%&/()=?^ABCDEFGHILMNOPQRSTUVZWKYJX";
-
-    $rand_char_index = rand(0, strlen( $all_chars) -1);
-
-
-
-    $rand_char = $all_chars [$rand_char_index];
-
-
-
-    $password_generate .= $rand_char;
-   
-  
-  }
-  return $password_generate;
-  var_dump($password_generate);
-}
-
-if ($form_sent) {
-  generate_password($password_security);
-
-
-  
-}
-
 require_once __DIR__ . "/partials/functions.php";
 require_once __DIR__ . "/partials/init.php";
 
@@ -67,7 +27,7 @@ require_once __DIR__ . "/partials/init.php";
       <label for="" class="form-label">
         Genera la tua password sicura:
       </label>
-      <input type="number" class="form-control" name="password-security" id="password-security" value="<?= $password_security ?>">
+      <input type="number" class="form-control" name="password-length" id="password-length" value="<?= $password_lenght ?>">
     </div>
     <div class="col-2 d-flex align-items-end">
       <button class="btn btn-primary w-100">Genera Password</button>
