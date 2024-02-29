@@ -4,12 +4,38 @@ $password_security = (int) $_GET['password-security'];
 
 $form_sent = !empty($_GET);
 
+/**
+ * 
+ * 
+ * @param int LUNGHEZZA PASSWORD
+ * @return string PASSWORD GENERATA 
+ */
 
+function generate_password($security)
+{
+  $password_generate = "";
+  for( $i = 0; $i < $security; $i++){
+    $all_chars = "abcdefghilmnopqrstuvzxwykj1234567890!£$%&/()=?^ABCDEFGHILMNOPQRSTUVZWKYJX";
+
+    $rand_char_index = rand(0, strlen( $all_chars) -1);
+
+
+
+    $rand_char = $all_chars [$rand_char_index];
+
+
+
+    $password_generate .= $rand_char;
+   
+  
+  }
+  return $password_generate;
+}
 
 if ($form_sent) {
-  $all_chars = "abcdefghilmnopqrstuvzxwykj1234567890!£$%&/()=?^ABCDEFGHILMNOPQRSTUVZWKYJX";
-  $rand_char_index = rand(0, strlen( $all_chars) -1);
-  $rand_char = $all_chars [$rand_char_index];
+  generate_password($password_security;)
+
+ 
 }
 
 
